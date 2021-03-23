@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Raw from './Raw';
+
+const API_KEY = 'c21c70709242dd71f2155bc6cd121d9e';
+
+const request = {
+  trending: `trending/all/week?api_key=${API_KEY}`,
+  upcoming: `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
+  latest: `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`,
+};
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Netflix App</h1>
       </header>
+      <Raw request={request.trending} />
     </div>
   );
 }
