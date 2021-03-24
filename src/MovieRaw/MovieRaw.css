@@ -1,0 +1,28 @@
+.movieSection {
+  margin-top: 3rem;
+}
+.movieSection h1 {
+  margin-left: 2px;
+}
+.movieRawContainer {
+  display: flex;
+  overflow-x: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.movieRawLine {
+  display: flex;
+}
+.tileImage {
+  width: 130px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.tileImage:hover img {
+  transform: scale(1.1);
+}
+@media (min-width: 768px) {
+  .tileImage {
+    width: 175px;
+  }
+}
