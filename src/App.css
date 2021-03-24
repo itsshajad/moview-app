@@ -2,7 +2,14 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+img {
+  width: 100%;
+  transition: all 0.3s;
+}
+img,
+video {
+  vertical-align: middle;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
