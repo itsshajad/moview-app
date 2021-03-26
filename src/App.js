@@ -1,4 +1,5 @@
 import './App.css';
+import AppBar from './AppBar/AppBar';
 import Banner from './Banner/Banner';
 import MovieRaw from './MovieRaw';
 
@@ -14,12 +15,13 @@ const request = {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Netflix App</h1>
-      </header>
+      {/* navigation section */}
+      <AppBar />
 
+      {/* banner section */}
       <Banner />
 
+      {/* movies rows */}
       <MovieRaw title="Trending" request={request.trending} />
       <MovieRaw title="Upcoming" request={request.upcoming} />
       <MovieRaw title="Latest" request={request.latest} />
