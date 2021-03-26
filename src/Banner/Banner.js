@@ -30,7 +30,9 @@ const Banner = (props) => {
         <p>{moviePlaying?.title}</p>
       </div>
       <img
-        src={`${imgPath}${moviePlaying?.backdrop_path}`}
+        src={`${imgPath}${
+          moviePlaying?.backdrop_path || moviePlaying?.poster_path
+        }`}
         alt={moviePlaying?.title}
       />
     </div>
