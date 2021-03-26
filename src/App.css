@@ -7,7 +7,7 @@ img {
   transition: all 0.3s;
 }
 img,
-App-header video {
+video {
   vertical-align: middle;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -17,7 +17,6 @@ App-header video {
 }
 
 .App-header {
-  background-color: #282c34;
   padding: 0 15px;
   justify-content: center;
   font-size: calc(10px + 2vmin);
