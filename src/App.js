@@ -15,15 +15,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Netflix App</h1>
+        <h1>Movies</h1>
       </header>
 
       <Banner />
 
       <MovieRaw title="Trending" request={request.trending} />
-      <MovieRaw title="Upcoming" request={request.upcoming} />
-      <MovieRaw title="Latest" request={request.latest} />
-      <MovieRaw title="Top Rated" request={request.toRated} />
+      <MovieRaw title="Upcoming" isSmallTile request={request.upcoming} />
+      <MovieRaw title="Latest" isSmallTile request={request.latest} />
+      <MovieRaw title="Top Rated" isSmallTile request={request.toRated} />
     </div>
   );
 }

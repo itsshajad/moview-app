@@ -1,7 +1,11 @@
 .bannerBox {
-  height: calc(100vh - 80px);
+  height: calc(80vh - 80px);
   position: relative;
   overflow: hidden;
+}
+.bannerBox img {
+  height: 100%;
+  object-fit: cover;
 }
 .contentDetails {
   position: absolute;
@@ -13,4 +17,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.contentDetails::before,
+.contentDetails::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.contentDetails::before {
+  min-height: 100%;
+  background-image: repeating-linear-gradient(203deg, #000000a3, #0d2bff00 1px);
+}
+.contentDetails::after {
+  min-height: 156px;
+  background-image: linear-gradient(360deg, #000000, #000000a3, #0d2bff00);
+}
+
+.contentDetails > div {
+  width: 80%;
+  padding: 15px;
+  z-index: 1;
+}
+.contentDetails * {
+  text-shadow: 0px 0px 13px black;
+}
+.contentDetails > div button {
+  padding: 14px 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background: #1b1b1b;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0.15em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  transition: background-color 0.3s;
+}
+
+.contentDetails > div button:hover {
+  background-color: black;
 }

@@ -15,14 +15,20 @@ video {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.relative {
+  position: relative;
+}
 
+.App-header h1 {
+  color: #d40101;
+}
 .App-header {
-  background-color: #282c34;
-
+  background-color: #151515;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-size: calc(10px + 2vmin);
   color: white;
 }
