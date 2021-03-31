@@ -15,17 +15,23 @@ const request = {
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
       {/* navigation section */}
       <AppBar />
+=======
+      <header className="App-header">
+        <h1>Movies</h1>
+      </header>
+>>>>>>> a43a08414ee5168bfe0f9c46f85f00bd5f8905b0
 
       {/* banner section */}
       <Banner />
 
       {/* movies rows */}
       <MovieRaw title="Trending" request={request.trending} />
-      <MovieRaw title="Upcoming" request={request.upcoming} />
-      <MovieRaw title="Latest" request={request.latest} />
-      <MovieRaw title="Top Rated" request={request.toRated} />
+      <MovieRaw title="Upcoming" isSmallTile request={request.upcoming} />
+      <MovieRaw title="Latest" isSmallTile request={request.latest} />
+      <MovieRaw title="Top Rated" isSmallTile request={request.toRated} />
     </div>
   );
 }

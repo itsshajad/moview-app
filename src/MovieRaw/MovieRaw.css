@@ -18,8 +18,63 @@
   margin-left: 5px;
   margin-right: 5px;
 }
+.tileImage .tileCard {
+  height: 262px;
+  width: 175px;
+  background-color: white;
+}
+.videoPopup {
+  position: fixed;
+  top: 25%;
+  left: calc(100vw - 968px);
+  width: 100%;
+  max-width: 968px;
+  padding: 25px;
+  left: 0;
+  z-index: 9;
+}
+.closeIcon {
+  position: absolute;
+  right: -14px;
+  user-select: none;
+  z-index: 1;
+  cursor: pointer;
+  top: -5px;
+  margin-top: -6px;
+  padding: 13px 17px;
+  background: #353535;
+  border-radius: 25px;
+}
 .tileImage:hover img {
   transform: scale(1.1);
+}
+.tileSkelton {
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 262px;
+  background-color: white;
+  justify-content: space-evenly;
+  animation: line 2s infinite ease-in-out;
+  border-radius: 5px;
+}
+
+@keyframes line {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+.tileSkelton > div {
+  height: 15px;
+  background-color: #efefef;
 }
 @media (min-width: 768px) {
   .tileImage {
