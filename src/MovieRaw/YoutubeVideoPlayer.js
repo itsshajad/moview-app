@@ -6,6 +6,8 @@ const YoutubeVideoPlayer = ({ playerId, setVideoPlayer, isPopup }) => {
 
   const [data, setData] = useState();
 
+  console.log(playerId);
+
   useEffect(() => {
     const instanse = axios.create({
       baseURL: 'https://api.themoviedb.org/3/',

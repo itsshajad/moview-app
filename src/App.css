@@ -23,17 +23,14 @@ video {
   color: #d40101;
 }
 .App-header {
-<<<<<<< HEAD
   padding: 0 15px;
   justify-content: center;
-=======
   background-color: #151515;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
->>>>>>> a43a08414ee5168bfe0f9c46f85f00bd5f8905b0
   font-size: calc(10px + 2vmin);
   color: white;
 }

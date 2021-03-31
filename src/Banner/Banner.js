@@ -7,6 +7,10 @@ import YoutubeVideoPlayer from '../MovieRaw/YoutubeVideoPlayer';
 
 const Banner = (props) => {
   const [data, setData] = useState([]);
+  const [videoPlayer, setVideoPlayer] = useState({
+    movieId: '',
+    open: false,
+  });
 
   const imgPath = 'https://image.tmdb.org/t/p/original';
 
@@ -15,34 +19,41 @@ const Banner = (props) => {
       const apiData = await axios.get(
         'https://api.themoviedb.org/3/movie/now_playing?api_key=c21c70709242dd71f2155bc6cd121d9e&language=en-US&page=1&region=US'
       );
-      setData(apiData.data.results);
+
+      const randomNo = Math.floor(Math.random() * apiData.data.results.length);
+      const moviePlaying = apiData.data.results[randomNo];
+      setData(moviePlaying);
     };
     fetchData();
   }, []);
 
-  const randomNo = Math.floor(Math.random() * data.length);
-
-  const moviePlaying = data[randomNo];
-
+  console.log(data);
+  const movieTrailerHandler = () => {
+    setVideoPlayer({ ...videoPlayer, movieId: data.id, open: true });
+  };
   return (
     <>
       <div className="bannerBox">
         <div className="contentDetails">
           <div>
-            <h1>{moviePlaying?.title}</h1>
-            <p>{moviePlaying?.original_title}</p>
+            <h1>{data?.title}</h1>
+            <p>{data?.original_title}</p>
 
-            <Button>Watch Trailer</Button>
+            <Button onClick={movieTrailerHandler}>Watch Trailer</Button>
 
-            <p>{moviePlaying?.overview}</p>
+            <p>{data?.overview}</p>
           </div>
         </div>
-        <img
-          src={`${imgPath}${moviePlaying?.backdrop_path}`}
-          alt={moviePlaying?.title}
-        />
+        <img src={`${imgPath}${data?.backdrop_path}`} alt={data?.title} />
       </div>
-      <YoutubeVideoPlayer isPopup />
+
+      {videoPlayer?.open && (
+        <YoutubeVideoPlayer
+          setVideoPlayer={setVideoPlayer}
+          isPopup
+          playerId={videoPlayer.movieId}
+        />
+      )}
     </>
   );
 };
