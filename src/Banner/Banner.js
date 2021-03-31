@@ -27,7 +27,6 @@ const Banner = (props) => {
     fetchData();
   }, []);
 
-  console.log(data);
   const movieTrailerHandler = () => {
     setVideoPlayer({ ...videoPlayer, movieId: data.id, open: true });
   };
